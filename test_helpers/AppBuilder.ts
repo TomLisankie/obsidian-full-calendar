@@ -131,7 +131,7 @@ export class MockAppBuilder {
     }
 
     file(filename: string, builder: FileBuilder): MockAppBuilder {
-        let file = new TFile();
+        const file = new TFile();
         file.name = filename;
 
         const [contents, metadata] = builder.done();
@@ -154,7 +154,7 @@ export class MockAppBuilder {
     }
 
     private makeFolder(): TFolder {
-        let folder = new TFolder();
+        const folder = new TFolder();
         folder.name = this.path;
         this.children.forEach((f) => (f.parent = folder));
         folder.children = [...this.children];
